@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Brain MRI Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="/">Home</a>
+        <a href="/history">Upload History</a>
+        <a href="/dashboard">Analytics Dashboard</a>
+    </div>
+    
+    <div class="main-content">
+        <header>
+            <h1>Upload MRI Image for Prediction</h1>
+        </header>
+        
+        <div class="container">
+            <form action="/" method="post" enctype="multipart/form-data">
+                <label for="file">Upload an MRI Image:</label>
+                <input type="file" name="file" id="file" required onchange="previewFile(event)">
+                <div id="preview">
+                    <p>No file selected</p>
+                </div>
+                <button type="submit">Predict</button>
+            </form>
+            {% if result %}
+            <div class="results">
+                <h2>Prediction: {{ result }}</h2>
+            </div>
+            {% endif %}
+        </div>
+        <footer>
+            <p>&copy; 2024 Brain Tumor Classifier</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

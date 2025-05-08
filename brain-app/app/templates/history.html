@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Upload History</h1>
+    </header>
+    <div class="container">
+        <table>
+            <tr>
+                <th>Filename</th>
+                <th>Prediction</th>
+                <th>Timestamp</th>
+            </tr>
+            {% for image in images %}
+            <tr>
+                <td>{{ image.filename }}</td>
+                <td>{{ image.prediction }}</td>
+                <td>{{ image.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/">Back to Home</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

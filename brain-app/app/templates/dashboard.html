@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="/">Home</a>
+        <a href="/history">Upload History</a>
+        <a href="/dashboard">Analytics Dashboard</a>
+    </div>
+    
+    <div class="main-content">
+        <h1>Analytics Dashboard</h1>
+        <p>Total Images Classified: {{ data['total_images'] }}</p>
+        <h2>Tumor Type Distribution</h2>
+        <ul>
+            {% for prediction, count in data['tumor_counts'] %}
+            <li>{{ prediction }}: {{ count }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
