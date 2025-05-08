@@ -25,7 +25,8 @@ with app.app_context():
     db.create_all()
 
 # Configure upload folder and allowed file extensions
-UPLOAD_FOLDER = 'static/uploads'
+app.config['STATIC_FOLDER'] = os.path.join(os.getcwd(), 'app', 'static')
+UPLOAD_FOLDER = os.path.join(app.config['STATIC_FOLDER'], 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
