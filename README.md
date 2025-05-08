@@ -17,7 +17,7 @@ This is a web-based tool developed to classify brain MRI scans as either benign 
 
 ## How to Run
 1. Clone the repository:  
-   `git clone https://github.com/your-username/AI-Tumor-Detection-Website.git`
+   `git clone https://github.com/exyw/AI-Tumor-Detection-Website.git`
 2. Install the required dependencies:  
    `pip install -r requirements.txt`
 3. Run the application:  
