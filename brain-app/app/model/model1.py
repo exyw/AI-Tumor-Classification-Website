@@ -1,21 +1,8 @@
-# This Python 3 environment comes with many helpful analytics libraries installed
-# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python
-# For example, here's several helpful packages to load
-
-import numpy as np # linear algebra
-import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import numpy as np 
+import pandas as pd
 import os
 import matplotlib.pyplot as plt
 import cv2
-
-'''
-# load image data -- in the future want to change it so that I can choose the tumor
-image_dir = '/Users/emmaxu/downloads/brain-mri-dataset/pituitary'
-example_image = cv2.imread(os.path.join(image_dir, 'pi-0002.jpg'))
-plt.imshow(cv2.cvtColor(example_image, cv2.COLOR_BGR2RGB))
-plt.title('Example Brain Scan')
-plt.show()
-'''
 
 # preprocess the data
 dataset_dir = '/Users/emmaxu/downloads/brain-mri-dataset'
